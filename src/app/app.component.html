@@ -1,9 +1,22 @@
-<div>
-  <label>Student Number</label><input type="text"[(ngModel)]="studNo"><br>
-  <label>Student First Name</label><input type="text"[(ngModel)]="studFname"><br>
-  <label>Student Last Name</label><input type="text"[(ngModel)]="studLname"><br>
-  <label>Student Program</label><input type="text"[(ngModel)]="studProg"><br>
-  <label>Student Year</label><input type="text"[(ngModel)]="studYr"><br>
+<form (ngSubmit)="onSubmit(regForm)" #regForm="ngForm">
+<div id="user-data">
+ <div class="form-group">
+  <label for="studNo">Student Number</label>
+  <input 
+  type="text" 
+  ngModel 
+  class="form-control"
+  name="studNo"
+  required
+  #username="ngModel"><br>
+  <label>Student First Name</label>
+  <input type="text"[(ngModel)]="studFname"><br>
+  <label>Student Last Name</label>
+  <input type="text"[(ngModel)]="studLname"><br>
+  <label>Student Program</label>
+  <input type="text"[(ngModel)]="studProg"><br>
+  <label>Student Year</label>
+  <input type="text"[(ngModel)]="studYr"><br>
 </div>
 <div id="options">
   <button id="addStudents" (click)="addStudentEntry()">
@@ -37,4 +50,6 @@
       </tr>
     </tbody>
   </table>
+ </div>
 </div>
+</form>
